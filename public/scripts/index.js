@@ -76,7 +76,6 @@ getTips().then((data) => data.forEach((tip) => createCard(tip)));
 // TODO: Use this function to validate the form data. Accepts an object with {username, topic, tip}. Returns { isValid: boolean, and errors: Object }
 const validateTip = (newTip) => {
   const { username, topic, tip } = newTip;
-
   // Object to hold our error messages until we are ready to return
   const errorState = {
     username: '',
@@ -124,10 +123,18 @@ const showErrors = (errorObj) => {
 // Helper function to send a POST request to the diagnostics route (/api/diagnostics)
 const submitDiagnostics = (submissionObj) => {
   // TODO: your code here
-  console.info(
-    '⚠️ Create the logic for the fetch POST request in scripts/index.js'
-  );
-  alert('Add your logic to scripts/index.js');
+  fetch('/api/diagnostics', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(submissionObj),
+  })
+    .then((response) => response.json())
+    .then(() => showErrors(submissionObj.errors))
+    .catch((error) => {
+      console.error('ummm, this happened:', error);
+    });
 };
 
 // Function to handle when a user submits the feedback form
