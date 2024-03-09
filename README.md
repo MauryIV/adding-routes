@@ -1,5 +1,5 @@
 <a id="title"></a>
-# early-api-layout 
+# Early API Layout 
 
 <a id="description"></a>
 ## Description
@@ -35,7 +35,7 @@ Good for reference in an api baseline. Lets user know when a GET, POST, and othe
 
 <a id="Visuals"></a>
 ## Visuals
-NA
+![Terminal info](https://github.com/MauryIV/early-api-layout/assets/146037880/9a601de7-c96e-4eed-b1f3-0c2b840abd67)
 
 <a id="tests"></a>
 ## Tests
